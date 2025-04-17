@@ -1,96 +1,836 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority-Based I/O Device Scheduling using Game Theory</title>
+    <style>
+        :root {
+            --primary: #2a9d8f;
+            --secondary: #264653;
+            --accent: #e76f51;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            opacity: 0.9;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+        
+        .author {
+            margin-top: 1rem;
+            font-style: italic;
+            font-size: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        button:hover {
+            background-color: #238577;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .metric-box {
+            background: var(--light);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0.5rem 0;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        th {
+            background-color: var(--light);
+            font-weight: 500;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .abstract {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background-color: rgba(42, 157, 143, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .math {
+            font-family: 'Courier New', monospace;
+            background-color: #f7f7f7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            border-radius: 3px;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Animation styles */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .spin {
+            animation: spin 1s linear;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Loading indicator */
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 5px solid rgba(42, 157, 143, 0.2);
+            border-radius: 50%;
+            border-top: 5px solid var(--primary);
+            animation: spin 1s linear infinite;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Priority-Based I/O Device Scheduling</h1>
+        <div class="subtitle">Using Game Theory & Nash Equilibrium</div>
+        <div class="author">By Harshit Kumar Singh | 22BLC1079</div>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Abstract</h2>
+            <p class="abstract">
+                This research addresses the challenge of efficient I/O resource allocation in multi-user computing
+                environments where multiple processes compete for limited I/O devices. Traditional scheduling algorithms
+                like FCFS and Round Robin fail to effectively prioritize urgent or high-importance tasks. The proposed approach 
+                integrates game theory principles with priority-based scheduling to optimize I/O device allocation, modeling 
+                the scheduling problem as a strategic game where processes act as players competing for resources based on 
+                their priorities and requirements.
+            </p>
+            <div class="highlight">
+                Simulation results show that the game theory-based scheduling algorithm outperforms traditional methods by 
+                <strong>40.1%</strong> in terms of response time and resource utilization, particularly for high-priority tasks.
+            </div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h2>Simulation Parameters</h2>
+                <form id="simulationForm">
+                    <div class="form-group">
+                        <label for="numProcesses">Number of Processes:</label>
+                        <select id="numProcesses">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="numDevices">Number of I/O Devices:</label>
+                        <select id="numDevices">
+                            <option value="3">3</option>
+                            <option value="5" selected>5</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="algorithm">Scheduling Algorithm:</label>
+                        <select id="algorithm">
+                            <option value="fcfs">First Come First Serve (FCFS)</option>
+                            <option value="rr">Round Robin (RR)</option>
+                            <option value="pbs">Priority-Based (PBS_PRO)</option>
+                            <option value="nash" selected>Nash-Priority Algorithm</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="auctionType">Auction Mechanism:</label>
+                        <select id="auctionType">
+                            <option value="first">First-price auction</option>
+                            <option value="second" selected>Second-price (Vickrey) auction</option>
+                            <option value="dynamic">Dynamic pricing</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="runSimulation">Run Simulation</button>
+                </form>
+            </div>
+            
+            <div class="card">
+                <h2>Performance Metrics</h2>
+                <div class="metrics">
+                    <div class="metric-box">
+                        <div class="metric-label">Average Response Time</div>
+                        <div class="metric-value" id="responseTime">60 ms</div>
+                    </div>
+                    
+                    <div class="metric-box">
+                        <div class="metric-label">Resource Utilization</div>
+                        <div class="metric-value" id="resourceUtil">90%</div>
+                    </div>
+                    
+                    <div class="metric-box">
+                        <div class="metric-label">Fairness Index</div>
+                        <div class="metric-value" id="fairnessIndex">Very High</div>
+                    </div>
+                    
+                    <div class="metric-box">
+                        <div class="metric-label">System Throughput</div>
+                        <div class="metric-value" id="throughput">142 ops/s</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Algorithm Comparison</h2>
+            <div class="chart-container">
+                <div id="comparisonChartLoading" class="loading"></div>
+                <canvas id="comparisonChart"></canvas>
+            </div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: rgba(231, 111, 81, 0.7);"></div>
+                    <span>FCFS</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: rgba(244, 162, 97, 0.7);"></div>
+                    <span>Round Robin</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: rgba(233, 196, 106, 0.7);"></div>
+                    <span>PBS_PRO</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: rgba(42, 157, 143, 0.7);"></div>
+                    <span>Nash-Priority</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h2>Process Priority and I/O Requests</h2>
+                <table id="processTable">
+                    <thead>
+                        <tr>
+                            <th>Process ID</th>
+                            <th>Priority</th>
+                            <th>I/O Request Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamically filled by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card">
+                <h2>Nash Equilibrium Analysis</h2>
+                <div class="highlight">
+                    <p>
+                        Based on the payoff matrix calculation, all processes show a preference for
+                        Device 4, creating a <span class="tooltip">Nash Equilibrium<span class="tooltiptext">
+                        A state where no player can gain by unilaterally changing their strategy.</span></span> 
+                        where every process chooses the highest-performance device.
+                    </p>
+                </div>
+                <p>
+                    This demonstrates a common resource contention issue in I/O scheduling, where the highest 
+                    performance device is preferred by all processes. Our algorithm resolves this by implementing
+                    an optimal allocation strategy based on priority and utility functions.
+                </p>
+                <div>
+                    <h3>Utility Function</h3>
+                    <p>
+                        The utility function for each process P<sub>i</sub> is defined as:
+                    </p>
+                    <p class="math">
+                        U<sub>i</sub> = V<sub>i</sub> - C(b<sub>i</sub>)
+                    </p>
+                    <p>
+                        Where V<sub>i</sub> is the value derived from getting I/O access, and C(b<sub>i</sub>) is 
+                        the cost paid based on the auction mechanism.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Payoff Matrix Visualization</h2>
+            <div class="chart-container">
+                <div id="payoffChartLoading" class="loading"></div>
+                <canvas id="payoffChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Optimal Device Allocation</h2>
+            <table id="allocationTable">
+                <thead>
+                    <tr>
+                        <th>Device ID</th>
+                        <th>Assigned Processes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamically filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        // Global chart objects to allow for destroy/recreate
+        let comparisonChart = null;
+        let payoffChart = null;
+
+        // Sample data (based on your provided documents)
+        const sampleData = {
+            processPriorities: [4, 2, 10, 2, 1, 8, 2, 5, 9, 9],
+            ioRequestTimes: [36, 18, 1, 99, 72, 15, 82, 31, 65, 33],
+            payoffMatrix: [
+                [36.9, 37.4, 37.9, 38.4, 38.9],
+                [18.7, 19.2, 19.7, 20.2, 20.7],
+                [100.4, 100.9, 101.4, 101.9, 102.4],
+                [10.6, 11.1, 11.6, 12.1, 12.6],
+                [3.3, 3.8, 4.3, 4.8, 5.3],
+                [79, 79.5, 80, 80.5, 81],
+                [12.3, 12.8, 13.3, 13.8, 14.3],
+                [47.4, 47.9, 48.4, 48.9, 49.4],
+                [84, 84.5, 85, 85.5, 86],
+                [87.2, 87.7, 88.2, 88.7, 89.2]
+            ],
+            nashEquilibrium: Array(10).fill().map((_, i) => [i, 4]),
+            optimalAllocation: {
+                0: [2, 5],
+                1: [0, 9],
+                2: [3, 6],
+                3: [1, 7],
+                4: [4, 8]
+            }
+        };
+        
+        // Algorithm performance metrics
+        const algorithmPerformance = {
+            fcfs: { responseTime: 120, resourceUtil: 70, fairnessIndex: "Low", throughput: 85 },
+            rr: { responseTime: 110, resourceUtil: 75, fairnessIndex: "Moderate", throughput: 95 },
+            pbs: { responseTime: 85, resourceUtil: 85, fairnessIndex: "High", throughput: 125 },
+            nash: { responseTime: 60, resourceUtil: 90, fairnessIndex: "Very High", throughput: 142 }
+        };
+        
+        // Update process table with animation
+        function updateProcessTable() {
+            const tableBody = document.getElementById('processTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+            
+            for (let i = 0; i < sampleData.processPriorities.length; i++) {
+                setTimeout(() => {
+                    const row = tableBody.insertRow();
+                    row.classList.add('fade-in');
+                    
+                    const cellId = row.insertCell(0);
+                    cellId.textContent = i;
+                    
+                    const cellPriority = row.insertCell(1);
+                    cellPriority.textContent = sampleData.processPriorities[i];
+                    
+                    const cellTime = row.insertCell(2);
+                    cellTime.textContent = sampleData.ioRequestTimes[i];
+                }, i * 50); // Stagger animation
+            }
+        }
+        
+        // Update allocation table with animation
+        function updateAllocationTable() {
+            const tableBody = document.getElementById('allocationTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+            
+            let i = 0;
+            for (const [device, processes] of Object.entries(sampleData.optimalAllocation)) {
+                setTimeout(() => {
+                    const row = tableBody.insertRow();
+                    row.classList.add('fade-in');
+                    
+                    const cellDevice = row.insertCell(0);
+                    cellDevice.textContent = device;
+                    
+                    const cellProcesses = row.insertCell(1);
+                    cellProcesses.textContent = processes.join(", ");
+                }, i * 100);
+                i++;
+            }
+        }
+        
+        // Create comparison chart with animation
+        function createComparisonChart() {
+            const loadingElement = document.getElementById('comparisonChartLoading');
+            loadingElement.classList.remove('hidden');
+            
+            const ctx = document.getElementById('comparisonChart').getContext('2d');
+            
+            // Destroy existing chart if it exists
+            if (comparisonChart) {
+                comparisonChart.destroy();
+            }
+            
+            // Set initial data to zero for animation
+            const initialData = {
+                labels: ['Average Response Time (ms)', 'Resource Utilization (%)', 'System Throughput (ops/s)'],
+                datasets: [
+                    {
+                        label: 'FCFS',
+                        data: [0, 0, 0],
+                        backgroundColor: 'rgba(231, 111, 81, 0.7)',
+                        borderColor: 'rgba(231, 111, 81, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Round Robin',
+                        data: [0, 0, 0],
+                        backgroundColor: 'rgba(244, 162, 97, 0.7)',
+                        borderColor: 'rgba(244, 162, 97, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'PBS_PRO',
+                        data: [0, 0, 0],
+                        backgroundColor: 'rgba(233, 196, 106, 0.7)',
+                        borderColor: 'rgba(233, 196, 106, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Nash-Priority',
+                        data: [0, 0, 0],
+                        backgroundColor: 'rgba(42, 157, 143, 0.7)',
+                        borderColor: 'rgba(42, 157, 143, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+            
+            comparisonChart = new Chart(ctx, {
+                type: 'bar',
+                data: initialData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+            
+            // Simulate loading
+            setTimeout(() => {
+                loadingElement.classList.add('hidden');
+                
+                // Update with real data after delay for animation
+                comparisonChart.data.datasets[0].data = [
+                    algorithmPerformance.fcfs.responseTime, 
+                    algorithmPerformance.fcfs.resourceUtil, 
+                    algorithmPerformance.fcfs.throughput
+                ];
+                comparisonChart.data.datasets[1].data = [
+                    algorithmPerformance.rr.responseTime, 
+                    algorithmPerformance.rr.resourceUtil, 
+                    algorithmPerformance.rr.throughput
+                ];
+                comparisonChart.data.datasets[2].data = [
+                    algorithmPerformance.pbs.responseTime, 
+                    algorithmPerformance.pbs.resourceUtil, 
+                    algorithmPerformance.pbs.throughput
+                ];
+                comparisonChart.data.datasets[3].data = [
+                    algorithmPerformance.nash.responseTime, 
+                    algorithmPerformance.nash.resourceUtil, 
+                    algorithmPerformance.nash.throughput
+                ];
+                
+                comparisonChart.update();
+            }, 800);
+        }
+        
+        // Create payoff matrix visualization with animation
+        function createPayoffChart() {
+            const loadingElement = document.getElementById('payoffChartLoading');
+            loadingElement.classList.remove('hidden');
+            
+            const ctx = document.getElementById('payoffChart').getContext('2d');
+            
+            // Destroy existing chart if it exists
+            if (payoffChart) {
+                payoffChart.destroy();
+            }
+            
+            // Prepare data for visualization
+            const datasets = [];
+            
+            for (let i = 0; i < sampleData.payoffMatrix.length; i++) {
+                datasets.push({
+                    label: `Process ${i}`,
+                    data: Array(sampleData.payoffMatrix[i].length).fill(0), // Start with zeros for animation
+                    backgroundColor: `hsla(${180 + (i * 18)}, 70%, 50%, 0.7)`,
+                    borderColor: `hsla(${180 + (i * 18)}, 70%, 40%, 1)`,
+                    borderWidth: 1
+                });
+            }
+            
+            payoffChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Device 0', 'Device 1', 'Device 2', 'Device 3', 'Device 4'],
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Payoff Value'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'I/O Devices'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Process-Device Payoff Values'
+                        }
+                    },
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+            
+            // Simulate loading
+            setTimeout(() => {
+                loadingElement.classList.add('hidden');
+                
+                // Update with real data after delay for animation
+                for (let i = 0; i < sampleData.payoffMatrix.length; i++) {
+                    payoffChart.data.datasets[i].data = sampleData.payoffMatrix[i];
+                }
+                
+                payoffChart.update();
+            }, 800);
+        }
+        
+        // Update performance metrics with animation
+        function updatePerformanceMetrics(algorithm) {
+            const metrics = ['responseTime', 'resourceUtil', 'fairnessIndex', 'throughput'];
+            const values = [
+                `${algorithmPerformance[algorithm].responseTime} ms`,
+                `${algorithmPerformance[algorithm].resourceUtil}%`,
+                algorithmPerformance[algorithm].fairnessIndex,
+                `${algorithmPerformance[algorithm].throughput} ops/s`
+            ];
+            
+            metrics.forEach((metric, index) => {
+                const element = document.getElementById(metric);
+                
+                // Add animation class
+                element.classList.add('spin');
+                
+                // Update text after brief delay
+                setTimeout(() => {
+                    element.textContent = values[index];
+                    
+                    // Remove animation class after completion
+                    setTimeout(() => {
+                        element.classList.remove('spin');
+                    }, 500);
+                }, 250);
+            });
+        }
+        
+        // Run simulation with loading indicators
+        document.getElementById('runSimulation').addEventListener('click', function() {
+            const button = this;
+            button.disabled = true;
+            button.textContent = "Simulating...";
+            
+            const algorithm = document.getElementById('algorithm').value;
+            const numProcesses = parseInt(document.getElementById('numProcesses').value);
+            const numDevices = parseInt(document.getElementById('numDevices').value);
+            const auctionType = document.getElementById('auctionType').value;
+            
+            // Simulate backend processing
+            setTimeout(() => {
+                // Generate random data if process or device count changes
+                if (numProcesses !== sampleData.processPriorities.length || numDevices !== 5) {
+                    // In a real implementation, this would call your backend simulation
+                    // Here we just adjust the sample data for visualization
+                    
+                    sampleData.processPriorities = Array(numProcesses).fill().map(() => Math.floor(Math.random() * 10) + 1);
+                    sampleData.ioRequestTimes = Array(numProcesses).fill().map(() => Math.floor(Math.random() * 100) + 1);
+                    
+                    // Generate new payoff matrix
+                    sampleData.payoffMatrix = [];
+                    for (let i = 0; i < numProcesses; i++) {
+                        const row = [];
+                        const baseValue = (100 / sampleData.processPriorities[i]) + (sampleData.ioRequestTimes[i] / 10);
+                        for (let j = 0; j < numDevices; j++) {
+                            row.push(parseFloat((baseValue + j * 0.5).toFixed(1)));
+                        }
+                        sampleData.payoffMatrix.push(row);
+                    }
+                    
+                    // Generate new Nash equilibrium (for this demo, always the last device)
+                    sampleData.nashEquilibrium = Array(numProcesses).fill().map((_, i) => [i, numDevices - 1]);
+                    
+                    // Generate new optimal allocation
+                    sampleData.optimalAllocation = {};
+                    for (let i = 0; i < numDevices; i++) {
+                        const processesPerDevice = Math.ceil(numProcesses / numDevices);
+                        const start = i * processesPerDevice;
+                        const end = Math.min((i + 1) * processesPerDevice, numProcesses);
+                        sampleData.optimalAllocation[i] = Array.from({length: end - start}, (_, j) => start + j);
+                    }
+                }
+                
+                // Update metrics based on selected algorithm with animation
+                updatePerformanceMetrics(algorithm);
+                
+                // Update charts and tables with animation
+                createComparisonChart();
+                createPayoffChart();
+                updateProcessTable();
+                updateAllocationTable();
+                
+                // Re-enable button
+                button.disabled = false;
+                button.textContent = "Run Simulation";
+            }, 1000);
+        });
+        
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            updateProcessTable();
+            updateAllocationTable();
+            updatePerformanceMetrics('nash');
+            
+            // Initial chart loading with animation
+            setTimeout(() => {
+                createComparisonChart();
+                createPayoffChart();
+            }, 500);
+        });
+    </script>
+</body>
 </html>

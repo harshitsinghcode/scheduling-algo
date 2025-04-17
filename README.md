@@ -1,14 +1,38 @@
----
-name: HTML Starter
-slug: html-starter-with-analytics
-description: HTML5 template with analytics and advanced routing configuration.
-deployUrl: https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html
-relatedTemplates:
-  - nextjs-boilerplate
----
+# Priority-Based I/O Device Scheduling - DA III [OS] 🕐
 
-# HTML Starter
+A game theory-based approach to I/O resource allocation that outperforms traditional scheduling algorithms :>
 
-This is a starter HTML5 templates which is configured with Vercel Analytics (through a `script` tag), advanced routing with [Vercel Edge Middleware](https://vercel.com/docs/concepts/functions/edge-middleware), as well as some basic styles
+## Quick Start 🔍
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html)
+```bash
+# Clone the repository
+git clone https://github.com/harshitsinghcode/scheduling-algo.git
+
+# Navigate to project directory
+cd scheduling-algo
+
+# Run the application (open in your browser)
+open index.html
+```
+
+## Usage 🔨
+
+1. Select simulation parameters:
+   - Number of Processes (5-20)
+   - Number of I/O Devices (3-7)
+   - Scheduling Algorithm (FCFS, RR, PBS_PRO, Nash-Priority)
+   - Auction Mechanism (First-price, Second-price, Dynamic)
+
+2. Click "Run Simulation" to see performance metrics and comparisons
+
+## Live Demo 🧑🏻‍💻
+
+Available at: https://scheduling-algo-vert.vercel.app/
+
+## Repository 📂
+
+Project code: https://github.com/harshitsinghcode/scheduling-algo/
+
+## Author 🙋🏻‍♂️
+
+Harshit Kumar Singh | 22BLC1079

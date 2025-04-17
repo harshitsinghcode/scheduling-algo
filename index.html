@@ -241,7 +241,6 @@
             opacity: 1;
         }
 
-        /* Animation styles */
         .fade-in {
             animation: fadeIn 0.5s ease-in;
         }
@@ -407,7 +406,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Dynamically filled by JavaScript -->
                     </tbody>
                 </table>
             </div>
@@ -461,18 +459,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Dynamically filled by JavaScript -->
                 </tbody>
             </table>
         </div>
     </div>
     
     <script>
-        // Global chart objects to allow for destroy/recreate
         let comparisonChart = null;
         let payoffChart = null;
 
-        // Sample data (based on your provided documents)
         const sampleData = {
             processPriorities: [4, 2, 10, 2, 1, 8, 2, 5, 9, 9],
             ioRequestTimes: [36, 18, 1, 99, 72, 15, 82, 31, 65, 33],
@@ -490,15 +485,14 @@
             ],
             nashEquilibrium: Array(10).fill().map((_, i) => [i, 4]),
             optimalAllocation: {
-                0: [2, 5],
-                1: [0, 9],
-                2: [3, 6],
-                3: [1, 7],
-                4: [4, 8]
+                0: [],
+                1: [],
+                2: [],
+                3: [],
+                4: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
             }
         };
         
-        // Algorithm performance metrics
         const algorithmPerformance = {
             fcfs: { responseTime: 120, resourceUtil: 70, fairnessIndex: "Low", throughput: 85 },
             rr: { responseTime: 110, resourceUtil: 75, fairnessIndex: "Moderate", throughput: 95 },
@@ -619,11 +613,9 @@
                 }
             });
             
-            // Simulate loading
             setTimeout(() => {
                 loadingElement.classList.add('hidden');
                 
-                // Update with real data after delay for animation
                 comparisonChart.data.datasets[0].data = [
                     algorithmPerformance.fcfs.responseTime, 
                     algorithmPerformance.fcfs.resourceUtil, 
@@ -649,19 +641,16 @@
             }, 800);
         }
         
-        // Create payoff matrix visualization with animation
         function createPayoffChart() {
             const loadingElement = document.getElementById('payoffChartLoading');
             loadingElement.classList.remove('hidden');
             
             const ctx = document.getElementById('payoffChart').getContext('2d');
             
-            // Destroy existing chart if it exists
             if (payoffChart) {
                 payoffChart.destroy();
             }
             
-            // Prepare data for visualization
             const datasets = [];
             
             for (let i = 0; i < sampleData.payoffMatrix.length; i++) {
@@ -711,11 +700,9 @@
                 }
             });
             
-            // Simulate loading
             setTimeout(() => {
                 loadingElement.classList.add('hidden');
                 
-                // Update with real data after delay for animation
                 for (let i = 0; i < sampleData.payoffMatrix.length; i++) {
                     payoffChart.data.datasets[i].data = sampleData.payoffMatrix[i];
                 }
@@ -724,7 +711,6 @@
             }, 800);
         }
         
-        // Update performance metrics with animation
         function updatePerformanceMetrics(algorithm) {
             const metrics = ['responseTime', 'resourceUtil', 'fairnessIndex', 'throughput'];
             const values = [
@@ -737,14 +723,11 @@
             metrics.forEach((metric, index) => {
                 const element = document.getElementById(metric);
                 
-                // Add animation class
                 element.classList.add('spin');
                 
-                // Update text after brief delay
                 setTimeout(() => {
                     element.textContent = values[index];
                     
-                    // Remove animation class after completion
                     setTimeout(() => {
                         element.classList.remove('spin');
                     }, 500);
@@ -752,7 +735,6 @@
             });
         }
         
-        // Run simulation with loading indicators
         document.getElementById('runSimulation').addEventListener('click', function() {
             const button = this;
             button.disabled = true;
@@ -762,17 +744,12 @@
             const numProcesses = parseInt(document.getElementById('numProcesses').value);
             const numDevices = parseInt(document.getElementById('numDevices').value);
             
-            // Simulate backend processing
             setTimeout(() => {
-                // Generate random data if process or device count changes
                 if (numProcesses !== sampleData.processPriorities.length || numDevices !== 5) {
-                    // In a real implementation, this would call your backend simulation
-                    // Here we just adjust the sample data for visualization
                     
                     sampleData.processPriorities = Array(numProcesses).fill().map(() => Math.floor(Math.random() * 10) + 1);
                     sampleData.ioRequestTimes = Array(numProcesses).fill().map(() => Math.floor(Math.random() * 100) + 1);
                     
-                    // Generate new payoff matrix
                     sampleData.payoffMatrix = [];
                     for (let i = 0; i < numProcesses; i++) {
                         const row = [];
@@ -783,10 +760,8 @@
                         sampleData.payoffMatrix.push(row);
                     }
                     
-                    // Generate new Nash equilibrium (for this demo, always the last device)
                     sampleData.nashEquilibrium = Array(numProcesses).fill().map((_, i) => [i, numDevices - 1]);
                     
-                    // Generate new optimal allocation
                     sampleData.optimalAllocation = {};
                     for (let i = 0; i < numDevices; i++) {
                         const processesPerDevice = Math.ceil(numProcesses / numDevices);
@@ -796,28 +771,23 @@
                     }
                 }
                 
-                // Update metrics based on selected algorithm with animation
                 updatePerformanceMetrics(algorithm);
                 
-                // Update charts and tables with animation
                 createComparisonChart();
                 createPayoffChart();
                 updateProcessTable();
                 updateAllocationTable();
                 
-                // Re-enable button
                 button.disabled = false;
                 button.textContent = "Run Simulation";
             }, 1000);
         });
         
-        // Initialize on page load
         window.addEventListener('load', function() {
             updateProcessTable();
             updateAllocationTable();
             updatePerformanceMetrics('nash');
             
-            // Initial chart loading with animation
             setTimeout(() => {
                 createComparisonChart();
                 createPayoffChart();
